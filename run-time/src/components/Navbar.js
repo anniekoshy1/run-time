@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Navbar.css'; // Optional: Separate CSS for Navbar styles
+import './Navbar.css';
 import logo from '../assets/images/logo.jpg';
 
 const Navbar = () => {

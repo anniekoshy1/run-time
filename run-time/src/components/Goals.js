@@ -1,5 +1,5 @@
 import React from 'react';
-import './Goals.css'; // Optional: Separate CSS for Goals styles
+import './Goals.css';
 import runningImage1 from '../assets/images/womenrunning.jpg';
 import runningImage2 from '../assets/images/legs.jpg';
 

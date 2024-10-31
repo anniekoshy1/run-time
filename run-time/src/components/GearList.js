@@ -1,5 +1,5 @@
 import React from 'react';
-import './GearList.css'; // Optional: Separate CSS for GearList styles
+import './GearList.css';
 
 const GearList = ({ data }) => {
   return (
