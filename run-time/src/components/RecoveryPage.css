@@ -1,0 +1,108 @@
+.recovery-page {
+    padding: 20px;
+  }
+  
+  .recovery-section, .injury-prevention-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .recovery-content, .prevention-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+  }
+  
+  .recovery-text, .prevention-text {
+    flex-basis: 60%;
+    padding-right: 20px;
+    text-align: left;
+  }
+  
+  .recovery-image, .prevention-image {
+    flex-basis: 35%;
+  }
+  
+  .recovery-image img, .prevention-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .recovery-content, .prevention-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .recovery-text, .prevention-text {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .recovery-image, .prevention-image {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .recovery-page {
+    padding: 20px;
+  }
+  
+  .recovery-section, .injury-prevention-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .recovery-section h2, .injury-prevention-section h2 {
+    color: #5484ef; /* Blue color for headers */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center; /* Center the headers */
+  }
+  
+  .recovery-content, .prevention-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+  }
+  
+  .recovery-text, .prevention-text {
+    flex-basis: 60%;
+    padding-right: 20px;
+    text-align: left;
+  }
+  
+  .recovery-image, .prevention-image {
+    flex-basis: 35%;
+  }
+  
+  .recovery-image img, .prevention-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #5484ef; /* Blue border for images */
+  }
+  
+  @media (max-width: 768px) {
+    .recovery-content, .prevention-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .recovery-text, .prevention-text {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .recovery-image, .prevention-image {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }  
