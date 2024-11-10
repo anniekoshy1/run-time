@@ -6,25 +6,7 @@ import './ContactPage.css';
 const ContactPage = () => {
   return (
     <div className="contact-page">
-      {/* Nav Bar */}
-      <nav className="navbar">
-        <div className="logo">
-          <img src={logo} alt="Run Icon" width="40px" />
-          <span>Run Time</span>
-        </div>
-        <ul className="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/gear">Gear & Equipment</a></li>
-          <li><a href="/training">Training</a></li>
-          <li><a href="/recovery">Recovery & Injury Prevention</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-        </ul>
-        <div className="burger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>    
-      </nav>
+     
 
       {/* IFrame Section */}
       <section className="iframe-section">
@@ -78,10 +60,6 @@ const ContactPage = () => {
         <img src={sunsetImage} alt="Running at sunset" />
       </section>
 
-      {/* Footer */}
-      <footer>
-        <p>© 2024 Run Time. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

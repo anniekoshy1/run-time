@@ -1,12 +1,3 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -59,11 +50,6 @@
   height: auto;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #f1f1f1;
-}
 button {
   background-color: #007BFF;
   color: white;
@@ -103,30 +89,95 @@ textarea {
   background-color: white;
   margin: 5px;
 }
+.iframe-section {
+  text-align: center;
+  padding: 20px;
+}
 
-/* Show the burger menu on smaller screens */
-@media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
+.iframe-container {
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+}
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    width: 150px;
-    border-radius: 5px;
-    padding: 10px;
-  }
+.iframe-container iframe {
+  width: 70%;
+  height: 100%;
+  border: none; 
+}
 
-  .nav-links.nav-active {
-    display: flex;
-  }
+.contact-image {
+  text-align: center;
+  padding: 20px;
+}
 
-  .nav-links li {
-    margin: 10px 0;
-  }
+.contact-image img {
+  width: 90%;
+  max-width: 800px;
+  height: auto; 
+  border: 5px solid #007BFF; 
+  border-radius: 8px; 
+  margin: 0 auto; 
+}
+/* Styling for the contact section */
+.contact-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Use the background color from your Part 7 website */
+  border-radius: 8px; /* Add rounded corners if needed */
+  max-width: 800px; /* Center the section with a max width */
+  margin: 0 auto; /* Center the section horizontally */
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  color: #333; /* Use the same color as on your Part 7 website */
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Align the labels and inputs to the left */
+}
+
+label {
+  display: block;
+  font-size: 0.9em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+button {
+  background-color: #007BFF; /* Use the button color from your Part 7 website */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darken the button on hover */
 }
