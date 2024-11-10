@@ -2,7 +2,7 @@
     {
       "_id": 1,
       "name": "Apple Watch Series 8",
-      "img_name": "images/apple-watch.jpg",
+      "img_name": "assets/images/apple-watch.jpg",
       "brand": "Apple",
       "price": "$399",
       "rating": 4.7,
@@ -17,7 +17,7 @@
     {
       "_id": 2,
       "name": "Garmin Forerunner 955",
-      "img_name": "images/garmin-forerunner.jpg",
+      "img_name": "assets/images/garmin-forerunner.jpg",
       "brand": "Garmin",
       "price": "$499",
       "rating": 4.8,
@@ -32,7 +32,7 @@
     {
       "_id": 3,
       "name": "Polar Vantage V2",
-      "img_name": "images/polar-vantage.jpg",
+      "img_name": "assets/images/polar-vantage.jpg",
       "brand": "Polar",
       "price": "$499",
       "rating": 4.5,
@@ -47,7 +47,7 @@
     {
       "_id": 4,
       "name": "Coros Pace 2",
-      "img_name": "images/coros-pace.jpg",
+      "img_name": "assets/images/coros-pace.jpg",
       "brand": "Coros",
       "price": "$199",
       "rating": 4.6,

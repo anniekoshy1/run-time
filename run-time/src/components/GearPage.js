@@ -123,7 +123,7 @@ const GearPage = () => {
               <button className="close-button" onClick={closeModal}>Close</button>
               {selectedItems.map((item) => (
                 <div className="json-data-card" key={item._id}>
-                  <img src={item.img_name} alt={item.name} />
+                  <img src={`${process.env.PUBLIC_URL}/${item.img_name}`} alt={item.name} />
                   <h3>{item.name}</h3>
                   <p>Brand: {item.brand}</p>
                   <p>Price: {item.price}</p>

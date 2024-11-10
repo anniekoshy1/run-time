@@ -2,7 +2,7 @@
     {
       "_id": 1,
       "name": "Hoka One One Clifton 8",
-      "img_name": "images/hoka.jpg",
+      "img_name": "assets/images/hoka.jpg",
       "brand": "Hoka",
       "price": "$140",
       "rating": 4.7,
@@ -15,7 +15,7 @@
     {
       "_id": 2,
       "name": "Brooks Ghost 14",
-      "img_name": "images/brooks.jpg",
+      "img_name": "assets/images/brooks.jpg",
       "brand": "Brooks",
       "price": "$130",
       "rating": 4.8,
@@ -28,7 +28,7 @@
     {
       "_id": 3,
       "name": "New Balance Fresh Foam X More V4",
-      "img_name": "images/fresh-foam-v4.jpg",
+      "img_name": "assets/images/fresh-foam-v4.jpg",
       "brand": "New Balance",
       "price": "$150",
       "rating": 4.7,
@@ -41,7 +41,7 @@
     {
       "_id": 4,
       "name": "Nike Zoom Rival Track Spikes",
-      "img_name": "images/spikes.jpg",
+      "img_name": "assets/images/spikes.jpg",
       "brand": "Nike",
       "price": "$70",
       "rating": 4.6,

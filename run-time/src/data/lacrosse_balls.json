@@ -2,7 +2,7 @@
     {
       "_id": 1,
       "name": "TriggerPoint Lacrosse Ball",
-      "img_name": "images/triggerpoint-lacrosse.jpg",
+      "img_name": "assets/images/triggerpoint-lacrosse.jpg",
       "brand": "TriggerPoint",
       "price": "$10",
       "rating": 4.8,
@@ -15,7 +15,7 @@
     {
       "_id": 2,
       "name": "ProSource Lacrosse Ball",
-      "img_name": "images/prosource-lacrosse.jpg",
+      "img_name": "assets/images/prosource-lacrosse.jpg",
       "brand": "ProSource",
       "price": "$8",
       "rating": 4.6,
@@ -28,7 +28,7 @@
     {
       "_id": 3,
       "name": "RAD Recovery Rounds",
-      "img_name": "images/rad-recovery.jpg",
+      "img_name": "assets/images/rad-recovery.jpg",
       "brand": "RAD",
       "price": "$16",
       "rating": 4.7,
@@ -41,7 +41,7 @@
     {
       "_id": 4,
       "name": "Rogue Lacrosse Ball",
-      "img_name": "images/rogue-lacrosse.jpg",
+      "img_name": "assets/images/rogue-lacrosse.jpg",
       "brand": "Rogue",
       "price": "$12",
       "rating": 4.9,

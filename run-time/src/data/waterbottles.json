@@ -2,7 +2,7 @@
     {
       "_id": 1,
       "name": "Lululemon Water Bottle",
-      "img_name": "images/lululemon-bottle.jpg",
+      "img_name": "assets/images/lululemon-bottle.jpg",
       "brand": "Lululemon",
       "price": "$38",
       "rating": 4.6,
@@ -15,7 +15,7 @@
     {
       "_id": 2,
       "name": "Hydro Flask Standard Mouth Bottle",
-      "img_name": "images/hydroflask-bottle.jpg",
+      "img_name": "assets/images/hydroflask-bottle.jpg",
       "brand": "Hydro Flask",
       "price": "$45",
       "rating": 4.8,
@@ -28,7 +28,7 @@
     {
       "_id": 3,
       "name": "Owala FreeSip Bottle",
-      "img_name": "images/owala-bottle.jpg",
+      "img_name": "assets/images/owala-bottle.jpg",
       "brand": "Owala",
       "price": "$22",
       "rating": 4.7,
@@ -41,7 +41,7 @@
     {
       "_id": 4,
       "name": "Yeti Rambler Bottle",
-      "img_name": "images/yeti-bottle.jpg",
+      "img_name": "assets/images/yeti-bottle.jpg",
       "brand": "Yeti",
       "price": "$50",
       "rating": 4.9,
