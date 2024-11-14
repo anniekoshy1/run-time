@@ -115,6 +115,8 @@
     max-width: 600px;
     width: 90%;
     position: relative;
+    max-height: 95vh;
+    overflow-y: auto;
   }
   
   .close-button {
@@ -132,4 +134,7 @@
   
   .json-data-card {
     margin-bottom: 20px;
-  }  
+  }
+  .json-data-card img{ 
+    max-width: 200px;
+  }

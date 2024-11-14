@@ -2,7 +2,7 @@
     {
       "_id": 1,
       "name": "Lululemon Speed Up Short 4\"",
-      "img_name": "assets/images/lululemon-shorts.jpg",
+      "img_name": "images/lululemon-shorts.jpg",
       "brand": "Lululemon",
       "price": "$68",
       "rating": 4.9,
@@ -15,7 +15,7 @@
     {
       "_id": 2,
       "name": "Men's Running Shorts",
-      "img_name": "assets/images/mens-running-shorts.jpg",
+      "img_name": "images/mens-running-shorts.jpg",
       "brand": "Nike",
       "price": "$40",
       "rating": 4.7,
@@ -28,7 +28,7 @@
     {
       "_id": 3,
       "name": "Women's Running Tank Top",
-      "img_name": "assets/images/womens-tank-top.jpg",
+      "img_name": "images/womens-tank-top.jpg",
       "brand": "Adidas",
       "price": "$30",
       "rating": 4.8,
@@ -41,7 +41,7 @@
     {
       "_id": 4,
       "name": "On Men's Focus Tank",
-      "img_name": "assets/images/on-focus-tank.jpg",
+      "img_name": "images/on-focus-tank.jpg",
       "brand": "On Running",
       "price": "$60",
       "rating": 4.6,

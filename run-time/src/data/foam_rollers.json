@@ -2,7 +2,7 @@
     {
       "_id": 1,
       "name": "TriggerPoint GRID Foam Roller",
-      "img_name": "assets/images/grid-foam-roller.jpg",
+      "img_name": "images/grid-foam-roller.jpg",
       "brand": "TriggerPoint",
       "price": "$35",
       "rating": 4.8,
@@ -15,7 +15,7 @@
     {
       "_id": 2,
       "name": "RumbleRoller Textured Foam Roller",
-      "img_name": "assets/images/rumbleroller.jpg",
+      "img_name": "images/rumbleroller.jpg",
       "brand": "RumbleRoller",
       "price": "$50",
       "rating": 4.7,
@@ -28,7 +28,7 @@
     {
       "_id": 3,
       "name": "AmazonBasics High-Density Foam Roller",
-      "img_name": "assets/images/amazon-foam-roller.jpg",
+      "img_name": "images/amazon-foam-roller.jpg",
       "brand": "AmazonBasics",
       "price": "$20",
       "rating": 4.6,
@@ -41,7 +41,7 @@
     {
       "_id": 4,
       "name": "LuxFit Premium High-Density Foam Roller",
-      "img_name": "assets/images/luxfit-foam-roller.jpg",
+      "img_name": "images/luxfit-foam-roller.jpg",
       "brand": "LuxFit",
       "price": "$25",
       "rating": 4.7,
