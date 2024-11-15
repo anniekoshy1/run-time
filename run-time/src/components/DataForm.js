@@ -15,18 +15,24 @@ const DataForm = ({ addNewItem }) => {
       return;
     }
 
+    const priceNumber = parseFloat(price); 
+    if (isNaN(priceNumber)) {
+      setError('Price must be a valid number');
+      return;
+    }
+
     try {
-      const response = await fetch('http://localhost:5000/items', {
+        const response = await fetch('https://part-9.onrender.com/api/gear', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, brand, price }),
+        body: JSON.stringify({ name, brand, price: priceNumber }),
       });
       const data = await response.json();
       if (data.success) {
         setSuccess(true);
-        addNewItem(data.newItem); // Add new item to the state
+        addNewItem(data.newItem); 
         setName('');
         setBrand('');
         setPrice('');
@@ -39,7 +45,7 @@ const DataForm = ({ addNewItem }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         value={name}
