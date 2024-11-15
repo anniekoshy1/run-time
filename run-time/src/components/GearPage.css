@@ -138,3 +138,14 @@
   .json-data-card img{ 
     max-width: 200px;
   }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .add-item-button {
+    margin-left: 20px; 
+  }
+  form {
+    margin-bottom: 20px;
+  }
+  

@@ -16,11 +16,15 @@ import bottleImage from '../assets/images/bottle.jpg';
 import glassesImage from '../assets/images/glasses.jpg';
 import runningVestImage from '../assets/images/runningvest.jpg';
 import ballImage from '../assets/images/ball.jpg';
+import DataForm from './DataForm';
 
 const GearPage = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [showModal, setShowModal] = useState(false);
-
+  const [items, setItems] = useState([]);
+  const addNewItem = (newItem) => {
+    setItems([...items, newItem]); // Function to add a new item to the state
+  };
   const handleClick = (category) => {
     // Load data based on category
     let data = [];
@@ -64,7 +68,7 @@ const GearPage = () => {
     <div className="gear-page">
       <section className="gear-section">
         <h2>Recommended Gear & Equipment</h2>
-
+        <DataForm addNewItem={addNewItem} />
         {/* Static Display of Gear Items */}
         <div className="gear-container">
           <div className="gear-item" onClick={() => handleClick("Sneakers")}>
