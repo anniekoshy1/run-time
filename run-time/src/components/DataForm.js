@@ -1,61 +1,149 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-const DataForm = ({ addNewItem }) => {
-  const [name, setName] = useState('');
-  const [brand, setBrand] = useState('');
-  const [price, setPrice] = useState('');
+const DataForm = () => {
+  const [name, setName] = useState("");
+  const [brand, setBrand] = useState("");
+  const [price, setPrice] = useState("");
+  const [gearItems, setGearItems] = useState([]);
+  const [message, setMessage] = useState("");
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false);
+  const [editingItem, setEditingItem] = useState(null);
 
+  // Fetch gear items from the server
+  const fetchGearItems = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/gear");
+      const data = await response.json();
+      setGearItems(data);
+    } catch (err) {
+      setError("Failed to fetch gear items");
+    }
+  };
+
+  useEffect(() => {
+    fetchGearItems();
+  }, []);
+
+  // Add a new item
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !brand || !price) {
-      setError('All fields are required');
-      setSuccess(false);
+      setError("All fields are required");
       return;
     }
 
     const priceNumber = parseFloat(price);
     if (isNaN(priceNumber)) {
-      setError('Price must be a valid number');
-      setSuccess(false);
+      setError("Price must be a valid number");
       return;
     }
 
     setError(null);
 
     try {
-      const response = await fetch('https://part-9.onrender.com/api/gear', {
-        method: 'POST',
+      const response = await fetch("http://localhost:4000/api/gear", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, brand, price: priceNumber }),
       });
 
       const data = await response.json();
 
-      if (data.success) {
-        setSuccess(true);
-        addNewItem(data.newItem);
-        setName('');
-        setBrand('');
-        setPrice('');
+      if (response.ok) {
+        setGearItems((prevItems) => [...prevItems, data.newItem]);
+        setName("");
+        setBrand("");
+        setPrice("");
+        setMessage("Item added successfully!");
+        setError(null);
       } else {
-        setError('Failed to add the item');
-        setSuccess(false);
+        setError("Failed to add the item");
       }
     } catch (err) {
-      setError('An error occurred while submitting the form');
-      setSuccess(false);
+      setError("An error occurred while adding the item");
     }
   };
 
+  // Delete an item
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:4000/api/gear/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        setGearItems((prevItems) => prevItems.filter((item) => item._id !== id));
+        setMessage("Item deleted successfully!");
+      } else {
+        setError("Failed to delete the item");
+      }
+    } catch (err) {
+      setError("An error occurred while deleting the item");
+    }
+  };
+
+  // Edit an item
+  const handleEditSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!name || !brand || !price) {
+      setError("All fields are required");
+      return;
+    }
+
+    const priceNumber = parseFloat(price);
+    if (isNaN(priceNumber)) {
+      setError("Price must be a valid number");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `http://localhost:4000/api/gear/${editingItem._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, brand, price: priceNumber }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setGearItems((prevItems) =>
+          prevItems.map((item) =>
+            item._id === editingItem._id ? data.updatedItem : item
+          )
+        );
+        setName("");
+        setBrand("");
+        setPrice("");
+        setEditingItem(null);
+        setMessage("Item updated successfully!");
+      } else {
+        setError("Failed to update the item");
+      }
+    } catch (err) {
+      setError("An error occurred while updating the item");
+    }
+  };
+
+  // Start editing an item
+  const startEditing = (item) => {
+    setEditingItem(item);
+    setName(item.name);
+    setBrand(item.brand);
+    setPrice(item.price);
+  };
+
   return (
-    <div style={{ textAlign: 'center', margin: '20px' }}>
-      <h2>Recommended Gear & Equipment</h2>
-      <form onSubmit={handleSubmit}>
+    <div style={{ textAlign: "center", margin: "20px" }}>
+      <form onSubmit={editingItem ? handleEditSubmit : handleSubmit}>
         <input
           type="text"
           placeholder="Name"
@@ -77,10 +165,19 @@ const DataForm = ({ addNewItem }) => {
           onChange={(e) => setPrice(e.target.value)}
         />
         <br />
-        <button type="submit">Add Item</button>
+        <button type="submit">{editingItem ? "Update Item" : "Add Item"}</button>
       </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {success && <p style={{ color: 'green' }}>Item added successfully!</p>}
+      {message && <p style={{ color: "green" }}>{message}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <ul>
+        {gearItems.map((item) => (
+          <li key={item._id}>
+            <strong>{item.name}</strong> - {item.brand} - ${item.price}
+            <button onClick={() => startEditing(item)}>Edit</button>
+            <button onClick={() => handleDelete(item._id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
