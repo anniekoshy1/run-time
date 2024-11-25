@@ -9,65 +9,79 @@ const DataForm = ({ addNewItem }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Client-side validation
+
     if (!name || !brand || !price) {
       setError('All fields are required');
+      setSuccess(false);
       return;
     }
 
-    const priceNumber = parseFloat(price); 
+    const priceNumber = parseFloat(price);
     if (isNaN(priceNumber)) {
       setError('Price must be a valid number');
+      setSuccess(false);
       return;
     }
 
+    setError(null);
+
     try {
-        const response = await fetch('https://part-9.onrender.com/api/gear', {
+      const response = await fetch('https://part-9.onrender.com/api/gear', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ name, brand, price: priceNumber }),
       });
+
       const data = await response.json();
+
       if (data.success) {
         setSuccess(true);
-        addNewItem(data.newItem); 
+        addNewItem(data.newItem);
         setName('');
         setBrand('');
         setPrice('');
       } else {
         setError('Failed to add the item');
+        setSuccess(false);
       }
     } catch (err) {
-      setError('An error occurred');
+      setError('An error occurred while submitting the form');
+      setSuccess(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-      />
-      <input
-        type="text"
-        value={brand}
-        onChange={(e) => setBrand(e.target.value)}
-        placeholder="Brand"
-      />
-      <input
-        type="number"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
-        placeholder="Price"
-      />
-      <button type="submit" className="add-item-button">Add Item</button>
+    <div style={{ textAlign: 'center', margin: '20px' }}>
+      <h2>Recommended Gear & Equipment</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Brand"
+          value={brand}
+          onChange={(e) => setBrand(e.target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <br />
+        <button type="submit">Add Item</button>
+      </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {success && <p style={{ color: 'green' }}>Item added successfully!</p>}
-    </form>
+    </div>
   );
 };
 

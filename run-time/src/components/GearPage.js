@@ -22,6 +22,12 @@ const GearPage = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [items, setItems] = useState([]);
+  useEffect(() => {
+    fetch('https://part-9.onrender.com/api/gear')
+      .then((response) => response.json())
+      .then((data) => setItems(data))
+      .catch((error) => console.error('Error fetching gear items:', error));
+  }, []);
   const addNewItem = (newItem) => {
     setItems([...items, newItem]); // Function to add a new item to the state
   };
