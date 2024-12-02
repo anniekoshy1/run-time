@@ -7,6 +7,7 @@ import TrainingPage from './components/TrainingPage';
 import RecoveryPage from './components/RecoveryPage';
 import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
+import DataForm from './components/DataForm';
 import './styles.css';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/training" element={<TrainingPage />} />
           <Route path="/recovery" element={<RecoveryPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/dataform" element={<DataForm />} />
         </Routes>
         <Footer />
       </div>
