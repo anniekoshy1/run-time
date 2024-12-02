@@ -6,6 +6,7 @@ const DataForm = ({ addNewItem }) => {
     const [brand, setBrand] = useState('');
     const [price, setPrice] = useState('');
     const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
     const [successMessage, setSuccessMessage] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -13,6 +14,7 @@ const DataForm = ({ addNewItem }) => {
 
         if (!name || !brand || !price) {
             setError('All fields are required');
+            setSuccess(false);
             setSuccessMessage(false);
             return;
         }
@@ -20,6 +22,7 @@ const DataForm = ({ addNewItem }) => {
         const priceNumber = parseFloat(price);
         if (isNaN(priceNumber)) {
             setError('Price must be a valid number');
+            setSuccess(false);
             setSuccessMessage(false);
             return;
         }
@@ -38,24 +41,28 @@ const DataForm = ({ addNewItem }) => {
             const data = await response.json();
 
             if (data.success) {
+                setSuccess(true);
                 setSuccessMessage(true);
                 addNewItem(data.newItem);
                 setName('');
                 setBrand('');
                 setPrice('');
-                setTimeout(() => setSuccessMessage(false), 2000);
+                setTimeout(() => setSuccessMessage(false), 2000); // Hide the message after 2 seconds
             } else {
                 setError('Failed to add the item');
+                setSuccess(false);
                 setSuccessMessage(false);
             }
         } catch (err) {
             setError('An error occurred while submitting the form');
+            setSuccess(false);
             setSuccessMessage(false);
         }
     };
 
     return (
-        <div className="container">
+        <div className="container" style={{ textAlign: 'center', margin: '20px' }}>
+            <h1>Recommended Gear & Equipment</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -63,6 +70,7 @@ const DataForm = ({ addNewItem }) => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="full-width"
+                    required
                 />
                 <input
                     type="text"
@@ -70,6 +78,7 @@ const DataForm = ({ addNewItem }) => {
                     value={brand}
                     onChange={(e) => setBrand(e.target.value)}
                     className="full-width"
+                    required
                 />
                 <div className="bottom-fields">
                     <input
@@ -83,6 +92,7 @@ const DataForm = ({ addNewItem }) => {
                 </div>
             </form>
             {error && <p style={{ color: 'red' }}>{error}</p>}
+            {success && <p style={{ color: 'green' }}>Item added successfully!</p>}
             {successMessage && <p id="successMessage">Item added successfully!</p>}
         </div>
     );
