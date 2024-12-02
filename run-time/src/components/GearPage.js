@@ -24,8 +24,20 @@ const GearPage = () => {
   const [userItems, setUserItems] = useState([]); // State for user-added items
 
   const addNewItem = (newItem) => {
-    setUserItems([...userItems, newItem]); // Add user-submitted item to state
+    setUserItems([...userItems, newItem]);
   };
+  // added
+  const deleteItem = (index) => {
+    const updatedItems = [...userItems];
+    updatedItems.splice(index, 1); 
+    setUserItems(updatedItems);
+  };
+  const editItem = (index, updatedItem) => {
+    const updatedItems = [...userItems];
+    updatedItems[index] = updatedItem;
+    setUserItems(updatedItems);
+  };
+  //end
 
   const handleClick = (category) => {
     let data = [];
@@ -120,9 +132,23 @@ const GearPage = () => {
               <h3>{item.name}</h3> {/* Display name */}
               <p>Brand: {item.brand}</p> {/* Display brand */}
               <p>Price: ${item.price.toFixed(2)}</p> {/* Display price */}
+              <button onClick={() => deleteItem(index)}>Delete</button> {/* Delete button */}
+              <button
+                onClick={() =>
+                  editItem(index, {
+                    ...item,
+                    name: prompt('Edit Name', item.name) || item.name,
+                    brand: prompt('Edit Brand', item.brand) || item.brand,
+                    price: parseFloat(prompt('Edit Price', item.price)) || item.price,
+                  })
+                }
+              >
+                Edit
+                </button>{/* Edit Button */}
             </div>
           ))}
         </div>
+        
 
         {/* Modal for JSON data */}
         {showModal && (
