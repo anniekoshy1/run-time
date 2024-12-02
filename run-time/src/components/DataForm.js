@@ -43,7 +43,7 @@ const DataForm = ({ addNewItem }) => {
                 setName('');
                 setBrand('');
                 setPrice('');
-                setTimeout(() => setSuccessMessage(false), 2000); // Hide success message after 2 seconds
+                setTimeout(() => setSuccessMessage(false), 2000);
             } else {
                 setError('Failed to add the item');
                 setSuccessMessage(false);
@@ -56,7 +56,6 @@ const DataForm = ({ addNewItem }) => {
 
     return (
         <div className="container">
-            <h1>Recommended Gear & Equipment</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
