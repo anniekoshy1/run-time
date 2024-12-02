@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./DataForm.css";
 
 const API_URL = "https://part-9.onrender.com/api/gear";
 
@@ -11,6 +12,7 @@ const DataForm = () => {
   const [error, setError] = useState(null);
   const [editingItem, setEditingItem] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const fetchGearItems = async () => {
     try {
@@ -32,12 +34,14 @@ const DataForm = () => {
 
     if (!name || !brand || !price) {
       setError("All fields are required");
+      setSuccess(false);
       return;
     }
 
     const priceNumber = parseFloat(price);
     if (isNaN(priceNumber)) {
       setError("Price must be a valid number");
+      setSuccess(false);
       return;
     }
 
@@ -69,11 +73,14 @@ const DataForm = () => {
         setBrand("");
         setPrice("");
         setEditingItem(null);
+        setSuccess(true);
       } else {
         setError(data.message || "Failed to process the request");
+        setSuccess(false);
       }
     } catch (err) {
       setError("An error occurred while processing the request");
+      setSuccess(false);
     } finally {
       setLoading(false);
     }
@@ -102,35 +109,41 @@ const DataForm = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", margin: "20px" }}>
+    <div className="container">
+      <h1>Recommended Gear & Equipment</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="full-width"
+          required
         />
-        <br />
         <input
           type="text"
           placeholder="Brand"
           value={brand}
           onChange={(e) => setBrand(e.target.value)}
+          className="full-width"
+          required
         />
-        <br />
-        <input
-          type="text"
-          placeholder="Price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <br />
-        <button type="submit" disabled={loading}>
-          {editingItem ? "Update Item" : "Add Item"}
-        </button>
+        <div className="bottom-fields">
+          <input
+            type="text"
+            placeholder="Price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {editingItem ? "Update Item" : "Add Item"}
+          </button>
+        </div>
       </form>
       {message && <p style={{ color: "green" }}>{message}</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && <p id="successMessage">Item added successfully!</p>}
       {gearItems.length === 0 ? (
         <p>Loading gear items...</p>
       ) : (
