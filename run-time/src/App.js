@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/training" element={<TrainingPage />} />
           <Route path="/recovery" element={<RecoveryPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/dataform" element={<DataForm />} /> {}
+          <Route path="/dataform" element={<DataForm />} />
         </Routes>
         <Footer />
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css'; // Ensure the correct path to your CSS file if any
+import './index.css'; // Optional: Ensure correct path to CSS if any
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
