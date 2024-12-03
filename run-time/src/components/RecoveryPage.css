@@ -58,10 +58,10 @@
   }
   
   .recovery-section h2, .injury-prevention-section h2 {
-    color: #5484ef; /* Blue color for headers */
+    color: #5484ef;
     font-size: 2.5rem;
     margin-bottom: 20px;
-    text-align: center; /* Center the headers */
+    text-align: center;
   }
   
   .recovery-content, .prevention-content {
@@ -87,7 +87,7 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 3px solid #5484ef; /* Blue border for images */
+    border: 3px solid #5484ef; 
   }
   
   @media (max-width: 768px) {
@@ -106,3 +106,71 @@
       margin: 0 auto;
     }
   }  
+  .recovery-strategies-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .strategies-box {
+    background-color: #fff; 
+    border: 4px solid #007BFF; 
+    outline-offset: 5px; 
+    padding: 15px;
+    width: fit-content; 
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px; 
+  }
+  
+  .strategies-box h2 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .strategies-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .strategies-box li {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .recovery-strategies-section {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    margin: 20px 0;
+    top: -500px;
+  }
+  
+  .strategies-box {
+    background-color: #fff; 
+    border: 4px solid #007BFF;
+    outline-offset: 5px; 
+    padding: 15px;
+    width: fit-content; 
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px;
+    margin-left: 150px;
+    margin-top: -300px;
+    margin-bottom: 40px;
+  }
+  
+  .strategies-box h2 {
+    margin-bottom: 10px;
+    text-align: center; 
+  }
+  
+  .strategies-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .strategies-box li {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
