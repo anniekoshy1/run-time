@@ -27,6 +27,22 @@ const RecoveryPage = () => {
         </div>
       </section>
 
+      {/* Recovery Strategies Section */}
+      <section className="recovery-strategies-section">
+        <div className="strategies-box">
+          <h2>Post Run Strategies</h2>
+          <ul>
+            <li>Stretching and foam rolling to release muscle tension and improve flexibility.</li>
+            <li>Hydrating and replenishing electrolytes lost during the run.</li>
+            <li>Eating a balanced post-run meal with protein and carbohydrates for muscle repair.</li>
+            <li>Incorporating rest days to allow the body to recover.</li>
+            <li>Using ice baths or compression gear to reduce inflammation.</li>
+            <li>Prioritizing sleep to support optimal recovery.</li>
+            <li>Listening to your body and adjusting training as needed.</li>
+          </ul>
+        </div>
+      </section>
+
       {/* Injury Prevention Section */}
       <section className="injury-prevention-section">
         <div className="prevention-content">
