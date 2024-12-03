@@ -1,6 +1,6 @@
 import React from 'react';
 import sunsetImage from '../assets/images/sunset.jpg';
-import logo from '../assets/images/logo.jpg'; // Import your logo image
+import logo from '../assets/images/logo.jpg'; 
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -10,14 +10,16 @@ const ContactPage = () => {
 
       {/* IFrame Section */}
       <section className="iframe-section">
-        <h2>Run Time Globally</h2>
+        <h2>Running Trail Parks</h2>
         <div className="iframe-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18..."
-            frameBorder="0"
-            allowFullScreen
-            title="Google Map"
-          ></iframe>
+        <iframe 
+          src="https://www.google.com/maps/d/embed?mid=1tRsi8GQMxDDHC85IgrrIKres2GzCWW8" 
+          frameBorder="0"
+          allowFullScreen
+          title="Google Map"
+          style={{ width: "100%", height: "400px" }}
+        ></iframe>
+
         </div>
       </section>
 
