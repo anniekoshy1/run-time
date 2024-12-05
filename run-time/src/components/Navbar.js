@@ -1,8 +1,7 @@
-// src/components/Navbar.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for client-side routing
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.jpg';
-import './Navbar.css'; // Import CSS file specific to Navbar
+import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
