@@ -25,6 +25,9 @@ const ContactPage = () => {
 
       {/* Contact Section */}
       <section className="contact-section">
+        <br></br>
+        <br></br>
+        <br></br>
         <h2>Get in Touch</h2>
         <p>If you have any questions or suggestions, feel free to reach out to us!</p>
         <form 
