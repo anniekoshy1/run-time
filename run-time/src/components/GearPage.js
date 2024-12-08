@@ -17,6 +17,7 @@ import glassesImage from '../assets/images/glasses.jpg';
 import runningVestImage from '../assets/images/runningvest.jpg';
 import ballImage from '../assets/images/ball.jpg';
 import DataForm from './DataForm';
+import DataFormDisplay from './DataFormDisplay';
 
 const GearPage = () => {
   const [selectedItems, setSelectedItems] = useState([]); // Modal items
@@ -82,6 +83,7 @@ const GearPage = () => {
       <section className="gear-section">
         <h2>Recommended Gear & Equipment</h2>
         <DataForm addNewItem={addNewItem} /> {/* Pass function to add user items */}
+        <DataFormDisplay />
         <div className="gear-container">
           {/* Static JSON-based cards */}
           <div className="gear-item" onClick={() => handleClick("Sneakers")}>
